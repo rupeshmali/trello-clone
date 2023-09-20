@@ -17,16 +17,12 @@ export const WorkspaceProvider = ({ children }) => {
     }, [])
     const handleCurrentWorkspace = (workspacesArray) => {
         const recentWorkspaceId = localStorage.getItem('recentWorkspaceID');
-        // console.log({recentWorkspaceId});
-        // if (recentWorkspaceId != '') {
-        const ID = recentWorkspaceId?.split('_');
-        // console.log("ID[0] : ",ID[0]);
-        // console.log("ID[1] : ",ID[1]);
-        if (auth.currentUser?.uid === ID[1]) {
-            filterAndSetCurrentWorkspace(ID[0], workspacesArray)
-        }
-
-        // }
+            if(recentWorkspaceId){
+                const ID = recentWorkspaceId?.split('_');
+                if (auth.currentUser?.uid === ID[1]) {
+                    filterAndSetCurrentWorkspace(ID[0], workspacesArray)
+                }
+            }
     }
     const filterAndSetCurrentWorkspace = (workspaceId, workspacesArray) => {
         const filteredWorkspace = workspacesArray.filter(workspace => { return workspaceId === workspace.id });
