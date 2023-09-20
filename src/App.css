@@ -1,0 +1,18 @@
+.navbar-div {
+  border-right: 0.1px solid rgb(213, 213, 213);
+}
+
+/* .paper{
+  background-color:  rgb(240, 240, 240);
+} */
+.boardname-large-container {
+  border-bottom: 0.1px solid rgb(213, 213, 213);
+}
+
+.active {
+  background-color: black !important;
+}
+
+.todo-title{
+  font-weight: 500 !important;
+}

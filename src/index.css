@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: #f7f8fa; */
+}
+.active{
+  background-color: rgb(241, 241, 230) !important; 
+  color: black !important;
+  border-radius: 5px;
+}
+.Search-box-board{
+  /* background-color: brown !important;
+  color: black; */
+}
