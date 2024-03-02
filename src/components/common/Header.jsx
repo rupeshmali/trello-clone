@@ -7,6 +7,7 @@ import { WorkspaceContext } from '../../contexts/workspace'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BoardContext } from '../../contexts/board'
 import auth, { AuthContext } from '../../contexts/authentication/auth'
+import { FiLogOut } from "react-icons/fi";
 
 const Header = () => {
     const { setDisplayCreateWorkspaceModal, workspaces, currentWorkspace, setCurrentWorkspace } = useContext(WorkspaceContext);
@@ -131,9 +132,10 @@ const Header = () => {
                         </Menu>
                     </Flex>
                 </Flex>
-                <Flex align={'center'}>
-                    <Button onClick={handleLogout} color='dark'>Log out</Button>
-                    <ActionIcon ><FaUserCircle size={22.5} /></ActionIcon>
+                <Flex align={'center'} gap={10} >
+                    <Button variant="transparent" onClick={handleLogout}><Text color='black' size={16}>Log out</Text></Button>
+                    {/* <Text>Log out </Text> */}
+                    <ActionIcon><FaUserCircle size={22.5} color='black' /></ActionIcon>
                 </Flex>
 
             </Flex>

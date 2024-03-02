@@ -18,7 +18,7 @@ import { ListProvider } from './contexts/list'
 
 function App( ) {
   const [user, setUser] = useState({})
-
+  
   // useEffect(() => {
   //   onAuthStateChanged(auth, (currentUser) => {
   //     if (currentUser) {
@@ -26,7 +26,7 @@ function App( ) {
   //     }
   //   })
   // }, [])
-
+  
   const { isUserLoggedIn } = useContext(AuthContext);
 
   return (
