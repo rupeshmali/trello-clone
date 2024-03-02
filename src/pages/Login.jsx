@@ -11,7 +11,7 @@ const Login = () => {
     const [loginPassword, setLoginPassword] = useState('');
     const [user, setUser] = useState({});
     const navigate = useNavigate();
-    const { login } = useContext(AuthContext);
+    const { login,setIsUserLoggedIn } = useContext(AuthContext);
 
    
     useEffect(() => {
@@ -30,6 +30,7 @@ const Login = () => {
         if (returnedUser.emailVerified) {
             // setShowAppshell(true);
             console.log("User's email is verified... Logging in...");
+            setIsUserLoggedIn(true);
             navigate('/home');
         }
         else {

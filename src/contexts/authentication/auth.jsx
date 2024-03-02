@@ -9,6 +9,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({});
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
     const register = async (registerEmail, registerPassword) => {
         try {
@@ -50,7 +51,9 @@ export const AuthProvider = ({ children }) => {
     const values = {
         register,
         login,
-        logout
+        logout,
+        isUserLoggedIn,
+        setIsUserLoggedIn
     }
     return (
         <AuthContext.Provider value={values}>

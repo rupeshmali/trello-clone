@@ -1,7 +1,8 @@
 import { collection, doc } from '@firebase/firestore';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { db } from '../../config/fire';
 import { addOne, getAll, updateOne } from '../../lib/firebase';
+import { AuthContext } from '../authentication/auth';
 
 export const ListContext = createContext();
 export const ListProvider = ({ children }) => {
@@ -9,6 +10,7 @@ export const ListProvider = ({ children }) => {
   const [listItems, setListItems] = useState([]);
   const [lists, setLists] = useState([]);
   const [displayListItemForm, setDisplayListItemForm] = useState(true);
+  const { isUserLoggedIn } = useContext(AuthContext)
 
   useEffect(() => {
     handleGetLists();
@@ -84,7 +86,8 @@ export const ListProvider = ({ children }) => {
     handleAddNewList,
     displayListItemForm,
     handleUpdateListItem,
-    setDisplayListItemForm
+    setDisplayListItemForm,
+    isUserLoggedIn
   }
 
   return (

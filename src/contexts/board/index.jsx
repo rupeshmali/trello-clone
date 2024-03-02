@@ -12,6 +12,7 @@ export const BoardProvider = ({ children }) => {
         handleGetBoards();
     },[]);
     const handleCreateNewBoard = (name, workspaceId) => {
+        console.log("Inside handleCreateNewBoard, name, workspaceId: ", name, workspaceId);
         const collectionRef = collection(db, "boards");
         const board = {
             name,

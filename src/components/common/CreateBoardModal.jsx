@@ -22,7 +22,7 @@ const CreateBoardModal = () => {
         setWorkspaceId(e);
     }
     const handleCreateBoard = () => {
-        handleCreateNewBoard(boardTitle, workspaceId);
+        handleCreateNewBoard(boardTitle, currentWorkspace?.id);
         setDisplayCreateBoardModal(false);
     }
     return (
@@ -54,6 +54,7 @@ const CreateBoardModal = () => {
                 <Select
                     label="Workspace"
                     onChange={handleWorkspaceId}
+                    value={currentWorkspace?.id}
                     // placeholder="Pick one"
                     data={[
                         { value: currentWorkspace?.id, label: currentWorkspace?.name },

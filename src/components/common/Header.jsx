@@ -11,13 +11,14 @@ import auth, { AuthContext } from '../../contexts/authentication/auth'
 const Header = () => {
     const { setDisplayCreateWorkspaceModal, workspaces, currentWorkspace, setCurrentWorkspace } = useContext(WorkspaceContext);
     const { setDisplayCreateBoardModal } = useContext(BoardContext);
-    const { logout } = useContext(AuthContext);
+    const { logout,setIsUserLoggedIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
     const handleLogout = () => {
         const loggedout = logout();
         if (loggedout) {
+            setIsUserLoggedIn(false);
             navigate('/login');
         }
     }
